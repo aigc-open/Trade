@@ -5,50 +5,42 @@
   "fields": {
     "symbol": "000001.SZ",
     "decision_type": "buy",
-    "final_decision": "建议买入000001.SZ，技术面突破，基本面稳健",
-    "confidence_score": "0.78",
     "decision_time": "2025-11-22T09:40:00Z",
-    "target_position_pct": "0.04",
-    "stop_loss": "12.40",
-    "take_profit": "13.20",
-    "holding_period": 5,
     "proposal": {
       "opportunity_id": 1,
-      "strategy_id": "trend_following_001"
+      "strategy_id": "trend_following_001",
+      "entry_reason": "技术面突破，基本面稳健"
     },
-    "debate_summary": {
-      "aggressive": {
-        "opinion": "强烈建议买入，技术指标全面向好，RSI显示强势，MACD金叉，应该积极进场",
-        "confidence": 0.85,
-        "position_suggestion": 0.05
-      },
-      "conservative": {
-        "opinion": "可以考虑买入，但需要控制仓位，市场整体波动较大，建议谨慎",
-        "confidence": 0.65,
-        "position_suggestion": 0.03
-      },
-      "quantitative": {
-        "opinion": "数据支持买入决策，胜率预测68%，风险收益比1:2.5，符合量化标准",
-        "confidence": 0.75,
-        "position_suggestion": 0.04
-      },
-      "referee": {
-        "final_opinion": "综合三方意见，建议买入，仓位4%，设置止损止盈",
-        "confidence": 0.78,
-        "position_suggestion": 0.04
+    "target_price": "13.20",
+    "target_quantity": 1000,
+    "target_position_pct": "0.04",
+    "aggressive_view": "强烈建议买入，技术指标全面向好，RSI显示强势，MACD金叉，应该积极进场，建议仓位5%",
+    "conservative_view": "可以考虑买入，但需要控制仓位，市场整体波动较大，建议谨慎，仓位控制在3%以内",
+    "quant_analysis": {
+      "win_probability": 0.68,
+      "expected_return": 0.05,
+      "risk_reward_ratio": 2.5,
+      "position_suggestion": 0.04,
+      "signals": {
+        "rsi": 65.5,
+        "macd": "golden_cross",
+        "volume": "increasing"
       }
     },
-    "risk_assessment": {
-      "risk_level": "medium",
-      "max_loss": 0.02,
-      "expected_return": 0.05,
-      "win_probability": 0.68
-    },
+    "debate_summary": "经过三方辩论，激进派建议5%仓位，保守派建议3%仓位，量化分析给出4%仓位建议。综合考虑，最终确定4%仓位，设置止损12.40，止盈13.20",
+    "final_decision": "建议买入000001.SZ，技术面突破，基本面稳健，建议仓位4%，止损12.40，止盈13.20",
+    "confidence_level": "high",
+    "confidence_score": "78.00",
+    "stop_loss": "12.40",
+    "take_profit": "13.20",
+    "max_loss_amount": "800.00",
     "is_executed": false,
     "execution_time": null,
-    "execution_result": null,
-    "created_at": "2025-11-22T09:40:00Z",
-    "updated_at": "2025-11-22T09:40:00Z"
+    "execution_result": {},
+    "outcome": null,
+    "actual_return": null,
+    "post_analysis": null,
+    "created_at": "2025-11-22T09:40:00Z"
   }
 },
 {
@@ -57,53 +49,47 @@
   "fields": {
     "symbol": "600000.SH",
     "decision_type": "buy",
-    "final_decision": "建议买入600000.SH，价值投资机会，估值低位",
-    "confidence_score": "0.70",
     "decision_time": "2025-11-22T09:42:00Z",
-    "target_position_pct": "0.03",
-    "stop_loss": "8.40",
-    "take_profit": "8.80",
-    "holding_period": 10,
     "proposal": {
       "opportunity_id": 2,
-      "strategy_id": "value_investing_001"
+      "strategy_id": "value_investing_001",
+      "entry_reason": "价值投资机会，估值低位"
     },
-    "debate_summary": {
-      "aggressive": {
-        "opinion": "银行股估值太低，但上涨空间有限，不建议重仓",
-        "confidence": 0.60,
-        "position_suggestion": 0.02
-      },
-      "conservative": {
-        "opinion": "非常适合保守投资，破净+高分红，安全边际高",
-        "confidence": 0.80,
-        "position_suggestion": 0.04
-      },
-      "quantitative": {
-        "opinion": "估值指标优秀，但动量不足，建议小仓位介入",
-        "confidence": 0.68,
-        "position_suggestion": 0.03
-      },
-      "referee": {
-        "final_opinion": "适合价值投资，建议3%仓位，中长期持有",
-        "confidence": 0.70,
-        "position_suggestion": 0.03
+    "target_price": "8.80",
+    "target_quantity": 1500,
+    "target_position_pct": "0.03",
+    "aggressive_view": "银行股估值太低，但上涨空间有限，不建议重仓，建议仓位2%",
+    "conservative_view": "非常适合保守投资，破净+高分红，安全边际高，建议仓位4%",
+    "quant_analysis": {
+      "win_probability": 0.72,
+      "expected_return": 0.04,
+      "risk_reward_ratio": 2.0,
+      "position_suggestion": 0.03,
+      "signals": {
+        "pe_ratio": 5.2,
+        "pb_ratio": 0.65,
+        "dividend_yield": 5.5
       }
     },
-    "risk_assessment": {
-      "risk_level": "low",
-      "max_loss": 0.015,
-      "expected_return": 0.04,
-      "win_probability": 0.72
-    },
+    "debate_summary": "激进派建议2%仓位，保守派建议4%仓位，量化分析给出3%仓位建议。综合考虑估值安全性，最终确定3%仓位",
+    "final_decision": "建议买入600000.SH，价值投资机会，估值低位，破净+高分红，建议仓位3%，止损8.40，止盈8.80",
+    "confidence_level": "high",
+    "confidence_score": "70.00",
+    "stop_loss": "8.40",
+    "take_profit": "8.80",
+    "max_loss_amount": "600.00",
     "is_executed": true,
     "execution_time": "2025-11-22T09:45:00Z",
     "execution_result": {
       "status": "success",
-      "trade_id": "T20251122094500ABC123"
+      "trade_id": 1,
+      "executed_price": 8.65,
+      "executed_quantity": 1500
     },
-    "created_at": "2025-11-22T09:42:00Z",
-    "updated_at": "2025-11-22T09:45:00Z"
+    "outcome": null,
+    "actual_return": null,
+    "post_analysis": null,
+    "created_at": "2025-11-22T09:42:00Z"
   }
 },
 {
@@ -112,51 +98,42 @@
   "fields": {
     "symbol": "AAPL",
     "decision_type": "hold",
-    "final_decision": "暂时观望AAPL，等待更好的入场时机",
-    "confidence_score": "0.55",
     "decision_time": "2025-11-22T05:10:00Z",
-    "target_position_pct": null,
-    "stop_loss": null,
-    "take_profit": null,
-    "holding_period": null,
     "proposal": {
       "opportunity_id": 3,
-      "strategy_id": "momentum_001"
+      "strategy_id": "momentum_001",
+      "entry_reason": "估值偏高，等待更好时机"
     },
-    "debate_summary": {
-      "aggressive": {
-        "opinion": "应该买入，趋势向好，不要错过机会",
-        "confidence": 0.75,
-        "position_suggestion": 0.04
-      },
-      "conservative": {
-        "opinion": "估值过高，PE 32.5，建议等待回调",
-        "confidence": 0.70,
-        "position_suggestion": 0.0
-      },
-      "quantitative": {
-        "opinion": "技术面良好但估值偏贵，胜率较低",
-        "confidence": 0.50,
-        "position_suggestion": 0.02
-      },
-      "referee": {
-        "final_opinion": "意见分歧较大，暂时观望，等待更明确的信号",
-        "confidence": 0.55,
-        "position_suggestion": 0.0
+    "target_price": null,
+    "target_quantity": null,
+    "target_position_pct": null,
+    "aggressive_view": "应该买入，趋势向好，不要错过机会，建议仓位4%",
+    "conservative_view": "估值过高，PE 32.5，建议等待回调，仓位0%",
+    "quant_analysis": {
+      "win_probability": 0.50,
+      "expected_return": null,
+      "risk_reward_ratio": 1.5,
+      "position_suggestion": 0.02,
+      "signals": {
+        "rsi": 62.5,
+        "macd": "bullish",
+        "valuation": "expensive"
       }
     },
-    "risk_assessment": {
-      "risk_level": "medium_high",
-      "max_loss": null,
-      "expected_return": null,
-      "win_probability": null
-    },
+    "debate_summary": "意见分歧较大，激进派建议买入，保守派建议等待，量化分析显示胜率较低。最终决定暂时观望",
+    "final_decision": "暂时观望AAPL，等待更好的入场时机。估值偏高，虽然技术面良好但风险收益比不理想",
+    "confidence_level": "medium",
+    "confidence_score": "55.00",
+    "stop_loss": null,
+    "take_profit": null,
+    "max_loss_amount": null,
     "is_executed": false,
     "execution_time": null,
-    "execution_result": null,
-    "created_at": "2025-11-22T05:10:00Z",
-    "updated_at": "2025-11-22T05:10:00Z"
+    "execution_result": {},
+    "outcome": null,
+    "actual_return": null,
+    "post_analysis": null,
+    "created_at": "2025-11-22T05:10:00Z"
   }
 }
 ]
-

@@ -93,4 +93,30 @@ class UserViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
+    
+    @action(detail=False, methods=['post'])
+    def change_password(self, request):
+        """修改密码"""
+        user = request.user
+        old_password = request.data.get('old_password')
+        new_password = request.data.get('new_password')
+        
+        if not old_password or not new_password:
+            return Response(
+                {'error': '请提供旧密码和新密码'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        # 验证旧密码
+        if not user.check_password(old_password):
+            return Response(
+                {'error': '旧密码不正确'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        # 设置新密码
+        user.set_password(new_password)
+        user.save()
+        
+        return Response({'message': '密码修改成功'})
 

@@ -1,0 +1,12 @@
+.dashboard {
+  .agent-card {
+    transition: all 0.3s;
+    border: 1px solid #f0f0f0;
+  }
+
+  .agent-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+}
+

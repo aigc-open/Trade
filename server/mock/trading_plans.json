@@ -4,69 +4,41 @@
   "pk": 1,
   "fields": {
     "plan_type": "daily",
-    "agent_type": "planning",
-    "market_conditions": {
-      "timestamp": "2025-11-22T09:00:00Z",
-      "trend": "neutral",
-      "volatility": "medium",
-      "sentiment": "neutral",
-      "market_index": {
-        "sh000001": 3250.5,
-        "sz399001": 10850.2
-      }
-    },
-    "target_symbols": ["000001.SZ", "600000.SH", "600519.SH", "000858.SZ"],
-    "target_sectors": ["banking", "consumer", "technology"],
-    "position_allocation": {
-      "000001.SZ": 0.04,
-      "600000.SH": 0.03,
-      "cash_reserve": 0.93
-    },
-    "strategies": [
-      {
-        "id": "trend_following_001",
-        "name": "趋势跟踪策略",
-        "allocation": 0.50
+    "plan_date": "2025-11-22",
+    "status": "active",
+    "plan_data": {
+      "market_conditions": {
+        "timestamp": "2025-11-22T09:00:00Z",
+        "trend": "neutral",
+        "volatility": "medium",
+        "sentiment": "neutral",
+        "market_index": {
+          "sh000001": 3250.5,
+          "sz399001": 10850.2
+        }
       },
-      {
-        "id": "value_investing_001",
-        "name": "价值投资策略",
-        "allocation": 0.30
-      }
+      "action_steps": [
+        "09:30-10:00: 监控开盘走势，确认市场方向",
+        "10:00-11:30: 寻找符合策略的交易机会",
+        "13:00-14:00: 执行交易决策，建立仓位",
+        "14:00-15:00: 监控持仓，调整止损止盈"
+      ],
+      "notes": "市场整体平稳，重点关注银行板块"
+    },
+    "objectives": [
+      "寻找突破机会",
+      "控制风险在3%以内",
+      "实现0.8%收益目标"
     ],
-    "entry_conditions": [
-      "价格突破关键阻力位",
-      "成交量放大",
-      "技术指标确认",
-      "估值处于合理区间"
-    ],
-    "exit_conditions": [
-      "止损触发",
-      "止盈触发",
-      "策略信号反转",
-      "市场环境变化"
-    ],
-    "risk_limits": {
+    "target_symbols": ["000001.SZ", "600000.SH", "600519.SH", "000858.SZ"],
+    "risk_assessment": {
       "max_position_per_symbol": 0.05,
       "max_sector_exposure": 0.30,
       "max_daily_loss": 0.03,
       "stop_loss_pct": 0.05
     },
-    "action_steps": [
-      "09:30-10:00: 监控开盘走势，确认市场方向",
-      "10:00-11:30: 寻找符合策略的交易机会",
-      "13:00-14:00: 执行交易决策，建立仓位",
-      "14:00-15:00: 监控持仓，调整止损止盈"
-    ],
     "expected_return": "0.008",
-    "confidence_score": "0.68",
-    "plan_start": "2025-11-22T09:00:00Z",
-    "plan_end": "2025-11-22T15:00:00Z",
-    "status": "active",
-    "priority": "high",
-    "actual_return": "0.0034",
-    "completion_rate": "65.00",
-    "notes": "市场整体平稳，重点关注银行板块",
+    "max_risk_pct": "0.03",
     "created_at": "2025-11-22T08:00:00Z",
     "updated_at": "2025-11-22T10:30:00Z"
   }
@@ -76,73 +48,41 @@
   "pk": 2,
   "fields": {
     "plan_type": "weekly",
-    "agent_type": "planning",
-    "market_conditions": {
-      "timestamp": "2025-11-18T00:00:00Z",
-      "trend": "bullish",
-      "volatility": "low",
-      "sentiment": "optimistic",
-      "weekly_outlook": "市场延续上涨趋势，但需警惕获利回吐"
+    "plan_date": "2025-11-18",
+    "status": "completed",
+    "plan_data": {
+      "market_conditions": {
+        "timestamp": "2025-11-18T00:00:00Z",
+        "trend": "bullish",
+        "volatility": "low",
+        "sentiment": "optimistic",
+        "weekly_outlook": "市场延续上涨趋势，但需警惕获利回吐"
+      },
+      "action_steps": [
+        "周一：评估上周表现，调整策略配置",
+        "周二-周四：积极寻找机会，建立仓位",
+        "周五：评估本周成果，适当获利了结"
+      ],
+      "notes": "本周计划执行顺利，超额完成目标",
+      "actual_return": 0.0253,
+      "completion_rate": 85.00
     },
+    "objectives": [
+      "把握板块轮动机会",
+      "建立中期仓位",
+      "实现2.5%周度收益"
+    ],
     "target_symbols": ["000001.SZ", "600000.SH", "600519.SH", "000858.SZ", "601318.SH"],
-    "target_sectors": ["banking", "consumer", "insurance"],
-    "position_allocation": {
-      "banking": 0.15,
-      "consumer": 0.10,
-      "insurance": 0.05,
-      "cash_reserve": 0.70
-    },
-    "strategies": [
-      {
-        "id": "trend_following_001",
-        "name": "趋势跟踪策略",
-        "allocation": 0.40
-      },
-      {
-        "id": "value_investing_001",
-        "name": "价值投资策略",
-        "allocation": 0.40
-      },
-      {
-        "id": "momentum_001",
-        "name": "动量策略",
-        "allocation": 0.20
-      }
-    ],
-    "entry_conditions": [
-      "板块轮动机会",
-      "基本面向好",
-      "技术面配合",
-      "资金流入迹象"
-    ],
-    "exit_conditions": [
-      "周度目标达成",
-      "市场趋势转弱",
-      "风险信号出现"
-    ],
-    "risk_limits": {
+    "risk_assessment": {
       "max_position_per_symbol": 0.05,
       "max_sector_exposure": 0.30,
       "max_weekly_loss": 0.05,
       "stop_loss_pct": 0.08
     },
-    "action_steps": [
-      "周一：评估上周表现，调整策略配置",
-      "周二-周四：积极寻找机会，建立仓位",
-      "周五：评估本周成果，适当获利了结"
-    ],
     "expected_return": "0.025",
-    "confidence_score": "0.72",
-    "plan_start": "2025-11-18T00:00:00Z",
-    "plan_end": "2025-11-22T15:00:00Z",
-    "status": "completed",
-    "priority": "medium",
-    "actual_return": "0.0253",
-    "completion_rate": "85.00",
-    "notes": "本周计划执行顺利，超额完成目标",
+    "max_risk_pct": "0.05",
     "created_at": "2025-11-17T15:00:00Z",
     "updated_at": "2025-11-22T15:00:00Z"
   }
 }
 ]
-

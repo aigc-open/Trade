@@ -3,22 +3,52 @@
   "model": "reports.reviewreportmodel",
   "pk": 1,
   "fields": {
-    "review_type": "daily",
-    "review_period_start": "2025-11-21T00:00:00Z",
-    "review_period_end": "2025-11-21T23:59:59Z",
-    "trades_count": 5,
-    "win_trades": 4,
-    "loss_trades": 1,
-    "win_rate": "80.00",
-    "total_pnl": "2850.00",
+    "report_type": "daily",
+    "report_date": "2025-11-21",
+    "title": "2025年11月21日交易复盘报告",
+    "summary": "今日完成5笔交易，4笔盈利1笔亏损，总体表现良好。成功捕捉银行板块突破机会，趋势跟踪策略表现优异。",
+    "report_data": {
+      "review_period": "2025-11-21",
+      "market_condition": "震荡上行",
+      "total_pnl": 2850.00,
+      "avg_profit": 950.00,
+      "avg_loss": -650.00
+    },
+    "performance_overview": {
+      "total_pnl": 2850.00,
+      "total_return_pct": 0.28,
+      "profit_factor": 2.92,
+      "max_single_profit": 1250.00,
+      "max_single_loss": -650.00
+    },
     "total_return": "0.0028",
-    "avg_profit": "950.00",
-    "avg_loss": "-650.00",
-    "profit_factor": "2.92",
-    "max_single_profit": "1250.00",
-    "max_single_loss": "-650.00",
-    "best_strategy": "trend_following_001",
-    "worst_strategy": "momentum_001",
+    "win_rate": "80.00",
+    "sharpe_ratio": "1.85",
+    "max_drawdown": "-0.0012",
+    "trade_count": 5,
+    "win_count": 4,
+    "lose_count": 1,
+    "best_trades": [
+      {
+        "trade_id": "T20251121100000ABC001",
+        "symbol": "000001.SZ",
+        "pnl": 1250.0,
+        "pnl_pct": 5.2
+      }
+    ],
+    "worst_trades": [
+      {
+        "trade_id": "T20251121113000ABC003",
+        "symbol": "000858.SZ",
+        "pnl": -650.0,
+        "pnl_pct": -2.8
+      }
+    ],
+    "lessons_learned": [
+      "趋势跟踪策略在突破行情中表现优异，应继续保持",
+      "动量策略追高风险较大，需要更严格的止损纪律",
+      "银行板块机会把握及时，技术面+基本面结合效果好"
+    ],
     "success_cases": [
       {
         "trade_id": "T20251121100000ABC001",
@@ -27,14 +57,6 @@
         "pnl_pct": 5.2,
         "reason": "成功捕捉突破行情，止盈及时",
         "strategy": "trend_following_001"
-      },
-      {
-        "trade_id": "T20251121140000ABC002",
-        "symbol": "600000.SH",
-        "pnl": 850.0,
-        "pnl_pct": 3.5,
-        "reason": "价值投资持仓，稳健上涨",
-        "strategy": "value_investing_001"
       }
     ],
     "failure_cases": [
@@ -47,143 +69,163 @@
         "strategy": "momentum_001"
       }
     ],
-    "key_insights": [
-      "趋势跟踪策略在震荡市中表现优异",
-      "价值投资策略提供稳定收益",
-      "需要改进动量策略的入场时机选择",
-      "止损执行有所延迟，需要优化"
-    ],
-    "lessons_learned": [
-      {
-        "type": "success",
-        "lesson": "突破确认后及时跟进，效果良好",
-        "applicable_scenarios": ["趋势确立"],
-        "confidence": 0.8
-      },
-      {
-        "type": "failure",
-        "lesson": "避免在市场高位追涨，容易被套",
-        "applicable_scenarios": ["高位震荡"],
-        "confidence": 0.85
+    "strategy_analysis": {
+      "best_strategy": "trend_following_001",
+      "worst_strategy": "momentum_001",
+      "strategy_performance": {
+        "trend_following_001": {"pnl": 2100.0, "win_rate": 100.0},
+        "value_investing_001": {"pnl": 1400.0, "win_rate": 100.0},
+        "momentum_001": {"pnl": -650.0, "win_rate": 0.0}
       }
-    ],
-    "improvement_suggestions": [
-      "优化动量策略的入场条件",
-      "加强止损执行的自动化",
-      "增加对市场情绪的判断权重",
-      "完善仓位管理规则"
-    ],
-    "strategy_adjustments": {
-      "trend_following_001": "保持现有参数，表现良好",
-      "momentum_001": "提高入场门槛，降低RSI阈值从55到60",
-      "value_investing_001": "可以适当增加仓位"
     },
-    "emotional_state": "calm",
-    "cognitive_biases": [
-      "存在一定的追涨倾向",
-      "对失败交易的止损执行不够果断"
+    "best_strategies": [
+      {"name": "trend_following_001", "pnl": 2100.0, "win_rate": 100.0}
     ],
-    "overall_rating": "7.50",
-    "confidence_level": "0.75",
-    "created_at": "2025-11-22T01:00:00Z",
-    "updated_at": "2025-11-22T01:00:00Z"
+    "worst_strategies": [
+      {"name": "momentum_001", "pnl": -650.0, "win_rate": 0.0}
+    ],
+    "market_insights": {
+      "market_trend": "银行板块走强，科技板块震荡",
+      "sector_rotation": "资金从科技板块流向低估值板块",
+      "risk_factors": ["市场波动加大", "追高风险增加"]
+    },
+    "improvement_suggestions": [
+      "优化动量策略的入场时机选择",
+      "加强止损纪律，避免情绪化交易",
+      "增加对市场环境的判断权重"
+    ],
+    "action_items": [
+      "调整动量策略参数，降低追高风险",
+      "制定更严格的风险控制规则",
+      "加强盘前市场分析"
+    ],
+    "evolution_summary": {
+      "strategy_adjustments": "动量策略参数优化",
+      "risk_control_improvements": "止损规则加强",
+      "new_insights": "低估值板块机会增加"
+    },
+    "cognitive_bias_analysis": {
+      "identified_biases": ["追涨倾向", "止损犹豫"],
+      "mitigation_measures": ["严格执行交易计划", "自动化止损"]
+    },
+    "generated_by": "AI Reflection Layer",
+    "is_published": true,
+    "created_at": "2025-11-21T23:00:00Z",
+    "updated_at": "2025-11-21T23:00:00Z"
   }
 },
 {
   "model": "reports.reviewreportmodel",
   "pk": 2,
   "fields": {
-    "review_type": "weekly",
-    "review_period_start": "2025-11-18T00:00:00Z",
-    "review_period_end": "2025-11-22T23:59:59Z",
-    "trades_count": 23,
-    "win_trades": 16,
-    "loss_trades": 7,
-    "win_rate": "69.57",
-    "total_pnl": "25300.00",
+    "report_type": "weekly",
+    "report_date": "2025-11-22",
+    "title": "2025年第47周交易复盘报告",
+    "summary": "本周完成23笔交易，18笔盈利5笔亏损，周度收益率2.53%，超额完成目标。整体策略执行良好，风险控制得当。",
+    "report_data": {
+      "review_period": "2025-11-18 to 2025-11-22",
+      "market_condition": "震荡上行",
+      "total_pnl": 25300.00,
+      "weekly_return": 2.53
+    },
+    "performance_overview": {
+      "total_pnl": 25300.00,
+      "total_return_pct": 2.53,
+      "profit_factor": 3.15,
+      "max_single_profit": 3200.00,
+      "max_single_loss": -1100.00
+    },
     "total_return": "0.0253",
-    "avg_profit": "2125.00",
-    "avg_loss": "-1200.00",
-    "profit_factor": "2.84",
-    "max_single_profit": "5200.00",
-    "max_single_loss": "-2500.00",
-    "best_strategy": "value_investing_001",
-    "worst_strategy": "momentum_001",
+    "win_rate": "78.26",
+    "sharpe_ratio": "2.15",
+    "max_drawdown": "-0.0085",
+    "trade_count": 23,
+    "win_count": 18,
+    "lose_count": 5,
+    "best_trades": [
+      {
+        "trade_id": "T20251120095000ABC015",
+        "symbol": "600519.SH",
+        "pnl": 3200.0,
+        "pnl_pct": 4.5
+      }
+    ],
+    "worst_trades": [
+      {
+        "trade_id": "T20251119140000ABC008",
+        "symbol": "000858.SZ",
+        "pnl": -1100.0,
+        "pnl_pct": -3.2
+      }
+    ],
+    "lessons_learned": [
+      "趋势跟踪和价值投资策略配合良好，互补性强",
+      "板块轮动把握较为准确，资金流向判断正确",
+      "周度目标设定合理，执行纪律性强"
+    ],
     "success_cases": [
       {
-        "trade_id": "T20251120100000GHI789",
+        "trade_id": "T20251120095000ABC015",
         "symbol": "600519.SH",
-        "pnl": 5200.0,
-        "pnl_pct": 5.8,
-        "reason": "价值回归，成功止盈",
-        "strategy": "value_investing_001"
-      },
-      {
-        "trade_id": "T20251119143000DEF456",
-        "symbol": "601318.SH",
-        "pnl": 3800.0,
-        "pnl_pct": 4.2,
-        "reason": "保险股反弹，把握良好",
+        "pnl": 3200.0,
+        "pnl_pct": 4.5,
+        "reason": "成功把握消费板块轮动机会",
         "strategy": "trend_following_001"
       }
     ],
     "failure_cases": [
       {
-        "trade_id": "T20251121083000XYZ999",
-        "symbol": "002594.SZ",
-        "pnl": -2500.0,
-        "pnl_pct": -5.5,
-        "reason": "追高被套，止损不及时",
+        "trade_id": "T20251119140000ABC008",
+        "symbol": "000858.SZ",
+        "pnl": -1100.0,
+        "pnl_pct": -3.2,
+        "reason": "对科技板块调整幅度判断不足",
         "strategy": "momentum_001"
       }
     ],
-    "key_insights": [
-      "本周市场整体向好，价值股表现突出",
-      "趋势跟踪策略捕捉到多次有效突破",
-      "动量策略在震荡市中风险较高",
-      "仓位控制较为合理，避免了大幅回撤"
-    ],
-    "lessons_learned": [
-      {
-        "type": "success",
-        "lesson": "价值投资在当前市场环境下优势明显",
-        "applicable_scenarios": ["估值修复行情"],
-        "confidence": 0.85
-      },
-      {
-        "type": "success",
-        "lesson": "分批建仓策略降低了持仓成本",
-        "applicable_scenarios": ["不确定市场"],
-        "confidence": 0.75
-      },
-      {
-        "type": "failure",
-        "lesson": "高波动股票的动量策略需要更严格的风控",
-        "applicable_scenarios": ["高波动环境"],
-        "confidence": 0.9
+    "strategy_analysis": {
+      "best_strategy": "trend_following_001",
+      "worst_strategy": "momentum_001",
+      "strategy_performance": {
+        "trend_following_001": {"pnl": 15200.0, "win_rate": 85.0},
+        "value_investing_001": {"pnl": 12500.0, "win_rate": 80.0},
+        "momentum_001": {"pnl": -2400.0, "win_rate": 50.0}
       }
-    ],
-    "improvement_suggestions": [
-      "继续优化动量策略，提高成功率",
-      "加强对市场风格的判断能力",
-      "完善策略轮动机制",
-      "建立更完善的止损体系"
-    ],
-    "strategy_adjustments": {
-      "trend_following_001": "微调参数，ma_short从5调整为7",
-      "momentum_001": "大幅提高入场门槛，减少交易频率",
-      "value_investing_001": "当前策略非常有效，继续执行"
     },
-    "emotional_state": "optimistic",
-    "cognitive_biases": [
-      "对成功交易过度自信",
-      "对动量策略存在过度乐观"
+    "best_strategies": [
+      {"name": "trend_following_001", "pnl": 15200.0, "win_rate": 85.0}
     ],
-    "overall_rating": "8.20",
-    "confidence_level": "0.82",
-    "created_at": "2025-11-23T01:00:00Z",
-    "updated_at": "2025-11-23T01:00:00Z"
+    "worst_strategies": [
+      {"name": "momentum_001", "pnl": -2400.0, "win_rate": 50.0}
+    ],
+    "market_insights": {
+      "market_trend": "市场呈现明显板块轮动特征",
+      "sector_rotation": "资金从科技板块流向消费和金融板块",
+      "risk_factors": ["科技板块调整压力", "市场分化加剧"]
+    },
+    "improvement_suggestions": [
+      "动量策略需要进一步优化，降低回撤",
+      "增加对板块轮动的系统性判断",
+      "优化仓位管理，提高资金使用效率"
+    ],
+    "action_items": [
+      "调整动量策略参数，优化信号过滤",
+      "建立板块轮动跟踪系统",
+      "优化资金分配模型"
+    ],
+    "evolution_summary": {
+      "strategy_adjustments": "动量策略权重降低，价值投资权重提升",
+      "risk_control_improvements": "单笔最大亏损控制在3%以内",
+      "new_insights": "板块轮动是当前市场主要特征"
+    },
+    "cognitive_bias_analysis": {
+      "identified_biases": ["科技股偏好", "持仓时间过长"],
+      "mitigation_measures": ["均衡配置各板块", "严格执行止盈规则"]
+    },
+    "generated_by": "AI Reflection Layer",
+    "is_published": true,
+    "created_at": "2025-11-22T18:00:00Z",
+    "updated_at": "2025-11-22T18:00:00Z"
   }
 }
 ]
-
