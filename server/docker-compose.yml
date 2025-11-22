@@ -1,0 +1,32 @@
+version: '3'
+services:
+  maas_service:
+    image: xxxxx
+    command:
+      - /bin/sh
+      - -c
+      - |
+        python3 manage.py makemigrations && \
+        python3 manage.py migrate && \
+        python3 manage.py loaddata case/load_data.json && \
+        python manage.py collectstatic --settings=core.local --no-input && \
+        uvicorn core.asgi:application \
+        --host 0.0.0.0 \
+        --port 8000 \
+        --limit-concurrency 10000 \
+        --workers 10
+    network_mode: host
+    restart: always
+    volumes:
+      - ./:/app
+  cmd_demo:
+    image: xxxxx
+    command:
+      - /bin/sh
+      - -c
+      - |
+        python3 manage.py cmd_demo
+    network_mode: host
+    restart: always
+    volumes:
+      - ./:/app

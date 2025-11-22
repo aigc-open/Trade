@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  # PostgreSQL数据库
+  postgres:
+    image: postgres:14
+    container_name: datatracehub_postgres
+    environment:
+      POSTGRES_DB: datatracehub
+      POSTGRES_USER: datatracehub
+      POSTGRES_PASSWORD: datatracehub123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U datatracehub"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # DataTraceHub应用
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: datatracehub_app
+    environment:
+      - ENVIRONMENT=production
+      - DATABASE_ENGINE=postgresql
+      - DATABASE_NAME=datatracehub
+      - DATABASE_USER=datatracehub
+      - DATABASE_PASSWORD=datatracehub123
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - SECRET_KEY=change-this-in-production
+      - DEBUG=False
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./logs:/app/logs
+      - static_data:/app/static
+      - media_data:/app/media
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: always
+    command: /bin/bash start.sh
+
+volumes:
+  postgres_data:
+  static_data:
+  media_data:
+

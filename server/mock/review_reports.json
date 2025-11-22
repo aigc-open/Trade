@@ -1,0 +1,189 @@
+[
+{
+  "model": "reports.reviewreportmodel",
+  "pk": 1,
+  "fields": {
+    "review_type": "daily",
+    "review_period_start": "2025-11-21T00:00:00Z",
+    "review_period_end": "2025-11-21T23:59:59Z",
+    "trades_count": 5,
+    "win_trades": 4,
+    "loss_trades": 1,
+    "win_rate": "80.00",
+    "total_pnl": "2850.00",
+    "total_return": "0.0028",
+    "avg_profit": "950.00",
+    "avg_loss": "-650.00",
+    "profit_factor": "2.92",
+    "max_single_profit": "1250.00",
+    "max_single_loss": "-650.00",
+    "best_strategy": "trend_following_001",
+    "worst_strategy": "momentum_001",
+    "success_cases": [
+      {
+        "trade_id": "T20251121100000ABC001",
+        "symbol": "000001.SZ",
+        "pnl": 1250.0,
+        "pnl_pct": 5.2,
+        "reason": "成功捕捉突破行情，止盈及时",
+        "strategy": "trend_following_001"
+      },
+      {
+        "trade_id": "T20251121140000ABC002",
+        "symbol": "600000.SH",
+        "pnl": 850.0,
+        "pnl_pct": 3.5,
+        "reason": "价值投资持仓，稳健上涨",
+        "strategy": "value_investing_001"
+      }
+    ],
+    "failure_cases": [
+      {
+        "trade_id": "T20251121113000ABC003",
+        "symbol": "000858.SZ",
+        "pnl": -650.0,
+        "pnl_pct": -2.8,
+        "reason": "追高买入，未能及时止损",
+        "strategy": "momentum_001"
+      }
+    ],
+    "key_insights": [
+      "趋势跟踪策略在震荡市中表现优异",
+      "价值投资策略提供稳定收益",
+      "需要改进动量策略的入场时机选择",
+      "止损执行有所延迟，需要优化"
+    ],
+    "lessons_learned": [
+      {
+        "type": "success",
+        "lesson": "突破确认后及时跟进，效果良好",
+        "applicable_scenarios": ["趋势确立"],
+        "confidence": 0.8
+      },
+      {
+        "type": "failure",
+        "lesson": "避免在市场高位追涨，容易被套",
+        "applicable_scenarios": ["高位震荡"],
+        "confidence": 0.85
+      }
+    ],
+    "improvement_suggestions": [
+      "优化动量策略的入场条件",
+      "加强止损执行的自动化",
+      "增加对市场情绪的判断权重",
+      "完善仓位管理规则"
+    ],
+    "strategy_adjustments": {
+      "trend_following_001": "保持现有参数，表现良好",
+      "momentum_001": "提高入场门槛，降低RSI阈值从55到60",
+      "value_investing_001": "可以适当增加仓位"
+    },
+    "emotional_state": "calm",
+    "cognitive_biases": [
+      "存在一定的追涨倾向",
+      "对失败交易的止损执行不够果断"
+    ],
+    "overall_rating": "7.50",
+    "confidence_level": "0.75",
+    "created_at": "2025-11-22T01:00:00Z",
+    "updated_at": "2025-11-22T01:00:00Z"
+  }
+},
+{
+  "model": "reports.reviewreportmodel",
+  "pk": 2,
+  "fields": {
+    "review_type": "weekly",
+    "review_period_start": "2025-11-18T00:00:00Z",
+    "review_period_end": "2025-11-22T23:59:59Z",
+    "trades_count": 23,
+    "win_trades": 16,
+    "loss_trades": 7,
+    "win_rate": "69.57",
+    "total_pnl": "25300.00",
+    "total_return": "0.0253",
+    "avg_profit": "2125.00",
+    "avg_loss": "-1200.00",
+    "profit_factor": "2.84",
+    "max_single_profit": "5200.00",
+    "max_single_loss": "-2500.00",
+    "best_strategy": "value_investing_001",
+    "worst_strategy": "momentum_001",
+    "success_cases": [
+      {
+        "trade_id": "T20251120100000GHI789",
+        "symbol": "600519.SH",
+        "pnl": 5200.0,
+        "pnl_pct": 5.8,
+        "reason": "价值回归，成功止盈",
+        "strategy": "value_investing_001"
+      },
+      {
+        "trade_id": "T20251119143000DEF456",
+        "symbol": "601318.SH",
+        "pnl": 3800.0,
+        "pnl_pct": 4.2,
+        "reason": "保险股反弹，把握良好",
+        "strategy": "trend_following_001"
+      }
+    ],
+    "failure_cases": [
+      {
+        "trade_id": "T20251121083000XYZ999",
+        "symbol": "002594.SZ",
+        "pnl": -2500.0,
+        "pnl_pct": -5.5,
+        "reason": "追高被套，止损不及时",
+        "strategy": "momentum_001"
+      }
+    ],
+    "key_insights": [
+      "本周市场整体向好，价值股表现突出",
+      "趋势跟踪策略捕捉到多次有效突破",
+      "动量策略在震荡市中风险较高",
+      "仓位控制较为合理，避免了大幅回撤"
+    ],
+    "lessons_learned": [
+      {
+        "type": "success",
+        "lesson": "价值投资在当前市场环境下优势明显",
+        "applicable_scenarios": ["估值修复行情"],
+        "confidence": 0.85
+      },
+      {
+        "type": "success",
+        "lesson": "分批建仓策略降低了持仓成本",
+        "applicable_scenarios": ["不确定市场"],
+        "confidence": 0.75
+      },
+      {
+        "type": "failure",
+        "lesson": "高波动股票的动量策略需要更严格的风控",
+        "applicable_scenarios": ["高波动环境"],
+        "confidence": 0.9
+      }
+    ],
+    "improvement_suggestions": [
+      "继续优化动量策略，提高成功率",
+      "加强对市场风格的判断能力",
+      "完善策略轮动机制",
+      "建立更完善的止损体系"
+    ],
+    "strategy_adjustments": {
+      "trend_following_001": "微调参数，ma_short从5调整为7",
+      "momentum_001": "大幅提高入场门槛，减少交易频率",
+      "value_investing_001": "当前策略非常有效，继续执行"
+    },
+    "emotional_state": "optimistic",
+    "cognitive_biases": [
+      "对成功交易过度自信",
+      "对动量策略存在过度乐观"
+    ],
+    "overall_rating": "8.20",
+    "confidence_level": "0.82",
+    "created_at": "2025-11-23T01:00:00Z",
+    "updated_at": "2025-11-23T01:00:00Z"
+  }
+}
+]
+

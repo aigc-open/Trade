@@ -1,0 +1,114 @@
+[
+{
+  "model": "trades.trademodel",
+  "pk": 1,
+  "fields": {
+    "trade_id": "T20251122094500ABC123",
+    "symbol": "600000.SH",
+    "action": "BUY",
+    "account_type": "simulation",
+    "account_name": "simulation_main",
+    "order_price": "8.62",
+    "order_quantity": 3000,
+    "filled_price": "8.62",
+    "filled_quantity": 3000,
+    "status": "filled",
+    "order_time": "2025-11-22T09:45:00Z",
+    "filled_time": "2025-11-22T09:45:01Z",
+    "commission": "77.58",
+    "slippage": "0.00",
+    "total_amount": "25937.58",
+    "strategy": 2,
+    "decision": 2,
+    "decision_process": {
+      "debate": "多智能体辩论：保守派强烈推荐，量化派中性，激进派谨慎，最终裁判决定买入",
+      "agents": ["aggressive", "conservative", "quantitative", "referee"]
+    },
+    "reason": "估值低位，市净率0.65破净，安全边际高",
+    "stop_loss": "8.40",
+    "take_profit": "8.80",
+    "execution_quality": {
+      "execution_time_ms": 100,
+      "slippage_pct": 0.0,
+      "market_impact": "minimal"
+    },
+    "created_at": "2025-11-22T09:45:00Z",
+    "updated_at": "2025-11-22T09:45:01Z"
+  }
+},
+{
+  "model": "trades.trademodel",
+  "pk": 2,
+  "fields": {
+    "trade_id": "T20251121150000DEF456",
+    "symbol": "000001.SZ",
+    "action": "BUY",
+    "account_type": "simulation",
+    "account_name": "simulation_main",
+    "order_price": "12.50",
+    "order_quantity": 2000,
+    "filled_price": "12.52",
+    "filled_quantity": 2000,
+    "status": "filled",
+    "order_time": "2025-11-21T15:00:00Z",
+    "filled_time": "2025-11-21T15:00:02Z",
+    "commission": "75.12",
+    "slippage": "40.00",
+    "total_amount": "25155.12",
+    "strategy": 1,
+    "decision": null,
+    "decision_process": {
+      "type": "breakout",
+      "signal": "突破买入信号"
+    },
+    "reason": "价格突破关键阻力位，技术面向好",
+    "stop_loss": "12.00",
+    "take_profit": "13.20",
+    "execution_quality": {
+      "execution_time_ms": 200,
+      "slippage_pct": 0.16,
+      "market_impact": "low"
+    },
+    "created_at": "2025-11-21T15:00:00Z",
+    "updated_at": "2025-11-21T15:00:02Z"
+  }
+},
+{
+  "model": "trades.trademodel",
+  "pk": 3,
+  "fields": {
+    "trade_id": "T20251120100000GHI789",
+    "symbol": "600519.SH",
+    "action": "SELL",
+    "account_type": "simulation",
+    "account_name": "simulation_main",
+    "order_price": "1850.00",
+    "order_quantity": 10,
+    "filled_price": "1848.50",
+    "filled_quantity": 10,
+    "status": "filled",
+    "order_time": "2025-11-20T10:00:00Z",
+    "filled_time": "2025-11-20T10:00:01Z",
+    "commission": "55.46",
+    "slippage": "15.00",
+    "total_amount": "18429.54",
+    "strategy": 2,
+    "decision": null,
+    "decision_process": {
+      "type": "profit_taking",
+      "trigger": "止盈卖出"
+    },
+    "reason": "达到止盈目标，获利了结",
+    "stop_loss": null,
+    "take_profit": null,
+    "execution_quality": {
+      "execution_time_ms": 100,
+      "slippage_pct": 0.08,
+      "market_impact": "minimal"
+    },
+    "created_at": "2025-11-20T10:00:00Z",
+    "updated_at": "2025-11-20T10:00:01Z"
+  }
+}
+]
+

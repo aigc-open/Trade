@@ -1,0 +1,65 @@
+[
+{
+  "model": "trades.portfoliomodel",
+  "pk": 1,
+  "fields": {
+    "account_name": "simulation_main",
+    "account_type": "simulation",
+    "initial_capital": "1000000.00",
+    "total_asset": "1025300.00",
+    "cash": "750000.00",
+    "available_cash": "740000.00",
+    "market_value": "275300.00",
+    "frozen_cash": "10000.00",
+    "total_pnl": "25300.00",
+    "total_return": "0.0253",
+    "today_pnl": "3500.00",
+    "today_return": "0.0034",
+    "total_trades": 15,
+    "win_trades": 10,
+    "lose_trades": 5,
+    "win_rate": "66.67",
+    "max_drawdown": "0.0123",
+    "sharpe_ratio": "1.85",
+    "volatility": "0.0850",
+    "risk_preference": "balanced",
+    "max_position_pct": "30.00",
+    "equity_curve": [],
+    "is_active": true,
+    "created_at": "2025-11-21T00:00:00Z",
+    "updated_at": "2025-11-22T10:30:00Z"
+  }
+},
+{
+  "model": "trades.portfoliomodel",
+  "pk": 2,
+  "fields": {
+    "account_name": "simulation_test",
+    "account_type": "simulation",
+    "initial_capital": "500000.00",
+    "total_asset": "508200.00",
+    "cash": "400000.00",
+    "available_cash": "395000.00",
+    "market_value": "108200.00",
+    "frozen_cash": "5000.00",
+    "total_pnl": "8200.00",
+    "total_return": "0.0164",
+    "today_pnl": "1200.00",
+    "today_return": "0.0024",
+    "total_trades": 8,
+    "win_trades": 6,
+    "lose_trades": 2,
+    "win_rate": "75.00",
+    "max_drawdown": "0.0089",
+    "sharpe_ratio": "1.65",
+    "volatility": "0.0720",
+    "risk_preference": "conservative",
+    "max_position_pct": "25.00",
+    "equity_curve": [],
+    "is_active": true,
+    "created_at": "2025-11-21T00:00:00Z",
+    "updated_at": "2025-11-22T10:30:00Z"
+  }
+}
+]
+

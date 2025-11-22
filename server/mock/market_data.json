@@ -1,0 +1,83 @@
+[
+{
+  "model": "market_data.marketdatamodel",
+  "pk": 1,
+  "fields": {
+    "symbol": "000001.SZ",
+    "market": "A_STOCK",
+    "timestamp": "2025-11-22T09:30:00Z",
+    "open": "12.50",
+    "high": "12.80",
+    "low": "12.45",
+    "close": "12.75",
+    "volume": 150000000,
+    "amount": "1912500000.00",
+    "change_pct": "1.95",
+    "turnover_rate": "2.50",
+    "data_source": "akshare",
+    "raw_data": {
+      "ma_5": 12.65,
+      "ma_10": 12.55,
+      "ma_20": 12.40,
+      "rsi": 65.5,
+      "macd": 0.15
+    },
+    "created_at": "2025-11-22T09:30:05Z",
+    "updated_at": "2025-11-22T09:30:05Z"
+  }
+},
+{
+  "model": "market_data.marketdatamodel",
+  "pk": 2,
+  "fields": {
+    "symbol": "600000.SH",
+    "market": "A_STOCK",
+    "timestamp": "2025-11-22T09:30:00Z",
+    "open": "8.50",
+    "high": "8.65",
+    "low": "8.48",
+    "close": "8.62",
+    "volume": 80000000,
+    "amount": "686400000.00",
+    "change_pct": "1.41",
+    "turnover_rate": "1.80",
+    "data_source": "akshare",
+    "raw_data": {
+      "ma_5": 8.55,
+      "ma_10": 8.50,
+      "ma_20": 8.45,
+      "rsi": 58.2,
+      "macd": 0.05
+    },
+    "created_at": "2025-11-22T09:30:05Z",
+    "updated_at": "2025-11-22T09:30:05Z"
+  }
+},
+{
+  "model": "market_data.marketdatamodel",
+  "pk": 3,
+  "fields": {
+    "symbol": "AAPL",
+    "market": "US_STOCK",
+    "timestamp": "2025-11-21T21:00:00Z",
+    "open": "185.50",
+    "high": "187.20",
+    "low": "185.00",
+    "close": "186.80",
+    "volume": 52000000,
+    "amount": "9689600000.00",
+    "change_pct": "0.70",
+    "turnover_rate": null,
+    "data_source": "yfinance",
+    "raw_data": {
+      "ma_5": 185.80,
+      "ma_10": 184.50,
+      "ma_20": 182.30,
+      "rsi": 62.5,
+      "macd": 1.20
+    },
+    "created_at": "2025-11-22T05:00:05Z",
+    "updated_at": "2025-11-22T05:00:05Z"
+  }
+}
+]

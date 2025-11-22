@@ -1,0 +1,31 @@
+[
+{
+  "model": "user.usermodel",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$IMKwDgl8lmpV4wjxSyIOFQ$hXGumkcCUV8me7f0jikaoQMGf3jJxeaJkPja8EAhLRE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-14T13:10:30.705Z",
+    "role": "super_admin",
+    "real_name": "系统管理员",
+    "mobile": null,
+    "status": "active",
+    "last_login_ip": null,
+    "login_fail_count": 0,
+    "lock_until": null,
+    "created_by": null,
+    "created_at": "2025-11-14T13:10:30.705Z",
+    "updated_at": "2025-11-14T13:10:31.597Z",
+    "session_key": null,
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
