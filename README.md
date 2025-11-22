@@ -73,24 +73,7 @@ React 18 + TypeScript + Ant Design
 
 ## 🚀 快速开始
 
-### 方式一：一键启动（推荐）
-
-```bash
-# 克隆项目
-cd /workspace/code/Trade
-
-# 一键启动（自动安装依赖并启动前后端）
-bash 启动系统.sh
-```
-
-启动后访问：
-- **前端**: http://localhost:3000
-- **后端**: http://localhost:8000
-- **默认账号**: `admin / admin123456`
-
-### 方式二：手动启动
-
-#### 1. 后端启动
+### 1. 后端启动
 
 ```bash
 cd server
@@ -101,17 +84,26 @@ pip install -r requirements.txt
 # 数据库迁移
 python manage.py migrate
 
-# 创建超级用户（可选）
-python manage.py createsuperuser
-
 # 加载Mock数据（可选）
-bash load_mock_data.sh
+./load_mock_data.sh
 
-# 启动后端
+# 启动后端服务器
 python manage.py runserver 0.0.0.0:8000
 ```
 
-#### 2. 前端启动
+### 2. 启动AI智能体（可选）
+
+```bash
+cd server
+
+# 启动所有智能体（自动交易）
+./start_all_agents.sh
+
+# 停止所有智能体
+./stop_all_agents.sh
+```
+
+### 3. 前端启动
 
 ```bash
 cd web
@@ -120,14 +112,15 @@ cd web
 npm install
 
 # 启动前端
-npm start
+npm run dev
 ```
 
-### 停止系统
+### 访问系统
 
-```bash
-bash 停止系统.sh
-```
+- **前端**: http://localhost:3000
+- **后端API**: http://localhost:8000/api/
+- **Admin后台**: http://localhost:8000/admin/
+- **默认账号**: `admin / admin123456`
 
 ---
 
@@ -181,12 +174,12 @@ Trade/
 │   │   ├── types/                # TypeScript类型
 │   │   └── App.tsx               # 主应用
 │   ├── package.json              # 前端依赖
-│   ├── README.md                 # 前端文档
-│   └── 快速启动.md               # 前端快速指南
+│   ├── vite.config.ts            # Vite配置
+│   └── README.md                 # 前端文档
 │
 ├── functions.MD                   # 系统设计文档
-├── 启动系统.sh                    # 一键启动脚本
-├── 停止系统.sh                    # 一键停止脚本
+├── AUTOMATION_GUIDE.md            # 自动化使用指南
+├── START_SYSTEM.sh                # 系统启动指南
 └── README.md                      # 本文件
 ```
 
@@ -275,21 +268,20 @@ graph LR
 - 📊 策略表现对比
 - 📋 最新交易记录
 
-### 3. 启动智能体
+### 3. 启动智能体（自动交易）
 
 ```bash
 cd server
 
 # 启动所有智能体
-bash start_all_agents.sh
+./start_all_agents.sh
 
 # 或单独启动某个智能体
-python manage.py run_perception    # 感知层
-python manage.py run_memory        # 记忆层
-python manage.py run_planning      # 规划层
-python manage.py run_decision      # 决策层
-python manage.py run_execution     # 执行层
-python manage.py run_reflection    # 反思层
+python manage.py run_perception --interval 30     # 感知层
+python manage.py run_decision --interval 60       # 决策层
+python manage.py run_execution --interval 30      # 执行层
+python manage.py run_planning --interval 300      # 规划层
+python manage.py run_reflection --interval 3600   # 反思层
 ```
 
 ### 4. 查看交易
@@ -321,39 +313,25 @@ python manage.py run_reflection    # 反思层
 
 详细文档请查看：
 - 📖 [前端README](web/README.md)
-- 📖 [快速启动指南](web/快速启动.md)
-- 📖 [设置指南](web/SETUP.md)
 
 ### API端点
 
-主要API端点：
+主要API端点（详见 Swagger 文档: http://localhost:8000/api/schema/swagger-ui/）：
 
 ```
-# 认证
-POST   /api/auth/login/              # 登录
-POST   /api/auth/logout/             # 登出
+POST   /api/token/                     # 登录获取Token
+GET    /api/user/profile/              # 用户信息
 
-# 智能体
-GET    /api/agents/status/           # 智能体状态
-GET    /api/agents/decisions/        # 决策记录
+GET    /api/agents/status/             # 智能体状态
+GET    /api/agents/decisions/          # 决策记录
 
-# 投资组合
-GET    /api/portfolios/              # 投资组合列表
-GET    /api/portfolios/{id}/         # 投资组合详情
+GET    /api/trades/portfolio/          # 投资组合
+GET    /api/trades/positions/          # 持仓列表
+GET    /api/trades/trades/             # 交易记录
 
-# 策略
-GET    /api/strategies/              # 策略列表
-GET    /api/strategies/{id}/         # 策略详情
-
-# 交易
-GET    /api/trades/                  # 交易记录
-GET    /api/positions/               # 持仓列表
-
-# 市场数据
-GET    /api/market-data/             # 市场数据
-
-# 报告
-GET    /api/reports/reviews/         # 复盘报告
+GET    /api/strategies/                # 策略列表
+GET    /api/market-data/data/          # 市场数据
+GET    /api/reports/reviews/           # 复盘报告
 ```
 
 ---
@@ -394,26 +372,26 @@ OPENAI_API_KEY = 'your-api-key-here'
 
 ## 🔧 配置说明
 
-### 环境变量
+### 主要配置
 
-推荐在 `server/.env` 文件中配置：
+编辑 `server/core/settings.py` 配置：
 
-```bash
-# OpenAI配置
-OPENAI_API_KEY=sk-xxx
-OPENAI_MODEL=gpt-4
+```python
+# AI配置（可选，用于智能决策）
+OPENAI_API_KEY = 'sk-xxx'
+OPENAI_MODEL = 'gpt-4'
 
-# 数据源配置
-TUSHARE_TOKEN=your-token
-AKSHARE_ENABLED=True
+# 数据源配置（可选）
+TUSHARE_TOKEN = 'your-tushare-token'      # A股数据
+ALPHAVANTAGE_API_KEY = 'your-av-key'      # 美股数据
 
-# 数据库配置
-DB_ENGINE=django.db.backends.postgresql
-DB_NAME=ai_trader
-DB_USER=postgres
-DB_PASSWORD=xxx
-DB_HOST=localhost
-DB_PORT=5432
+# 数据库（默认SQLite，可切换PostgreSQL）
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 ```
 
 ---
@@ -456,14 +434,20 @@ DB_PORT=5432
 ## 🎉 开始使用
 
 ```bash
-# 一键启动
-bash 启动系统.sh
+# 1. 启动后端
+cd server
+python manage.py runserver
 
-# 访问系统
-# 前端: http://localhost:3000
-# 后端: http://localhost:8000
-# 账号: admin / admin123456
+# 2. 启动智能体（新终端）
+cd server
+./start_all_agents.sh
+
+# 3. 启动前端（新终端）
+cd web
+npm run dev
 ```
+
+**访问**: http://localhost:3000 | **账号**: admin / admin123456
 
 **祝交易愉快！📈🚀**
 
